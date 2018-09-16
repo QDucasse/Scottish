@@ -1,3 +1,10 @@
+"
+I represent an uncomplete card group. My strength is 0
+
+I'm composed two ECOCard.
+
+I collaborate with ECOStone, ECOCard and ECOBoard.
+"
 Class {
 	#name : #ECOGroupUncompleteTwo,
 	#superclass : #ECOGroup,
@@ -36,5 +43,37 @@ ECOGroupUncompleteTwo >> strength [
 { #category : #accessing }
 ECOGroupUncompleteTwo >> with: anECOCard [
 	
+	| s sameColor sameValue isSequence |
+	cards add: anECOCard.
+	s := cards sorted: [ :a :b | a value < b value ].
+	sameColor := s allSatisfy:  [ :each | each color = cards first color ].
+	sameValue := s allSatisfy: [ :each | each value = cards first value ].
+	isSequence := s first value = (s last value -2) and: [s asSet size = 3].
+	
+	isSequence & sameColor ifTrue: [ 
+		| g |
+		g := ECOGroupFlush new.
+		g cards: cards.
+		^g ].
+	
+	sameValue ifTrue: [ 
+		| g |
+		g := ECOGroupThreeOfAKind  new.
+		g cards: cards.
+		^g ].
+	
+	sameColor ifTrue: [ 
+		| g |
+		g := ECOGroupSameColor new.
+		g cards: cards.
+		^g ].
+	
+	isSequence ifTrue: [ 
+		| g |
+		g := ECOGroupStraight new.
+		g cards: cards.
+		^g ].
+	
+	^ ECOGroupComplete new cards: cards
 
 ]

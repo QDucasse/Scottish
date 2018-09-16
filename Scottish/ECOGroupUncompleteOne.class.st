@@ -1,7 +1,7 @@
 "
 I represent an uncomplete card group. My strength is 0
 
-I'm composed of one or two ECOCard.
+I'm composed one ECOCard.
 
 I collaborate with ECOStone, ECOCard and ECOBoard.
 "

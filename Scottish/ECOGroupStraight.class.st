@@ -6,7 +6,13 @@ I'm composed of three cards with no at least 2 different colors and values in an
 I collaborate with ECOStone, ECOCard and ECOBoard.
 "
 Class {
-	#name : #ECOGroup2,
+	#name : #ECOGroupStraight,
 	#superclass : #ECOGroup,
 	#category : #Scottish
 }
+
+{ #category : #accessing }
+ECOGroupStraight >> strength [
+
+	^ 2
+]

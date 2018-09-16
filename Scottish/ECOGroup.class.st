@@ -28,6 +28,11 @@ ECOGroup >> cards [
 	^ cards
 ]
 
+{ #category : #accessing }
+ECOGroup >> cards: aCollection [ 
+	cards := aCollection
+]
+
 { #category : #initialization }
 ECOGroup >> initialize [
 
@@ -37,4 +42,10 @@ ECOGroup >> initialize [
 { #category : #testing }
 ECOGroup >> isUncomplete [
 	^ false
+]
+
+{ #category : #accessing }
+ECOGroup >> strength [
+	
+	self subclassResponsibility 
 ]

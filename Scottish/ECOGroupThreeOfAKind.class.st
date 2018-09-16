@@ -6,7 +6,13 @@ I'm composed of three cards with the same value.
 I collaborate with ECOStone, ECOCard and ECOBoard.
 "
 Class {
-	#name : #ECOGroup4,
+	#name : #ECOGroupThreeOfAKind,
 	#superclass : #ECOGroup,
 	#category : #Scottish
 }
+
+{ #category : #accessing }
+ECOGroupThreeOfAKind >> strength [
+
+	^ 4
+]
