@@ -16,3 +16,10 @@ ECOGroupComplete >> strength [
 
 	^1
 ]
+
+{ #category : #accessing }
+ECOGroupComplete >> with: anECOCard [
+	" It should never happen ! Either the player should not be able to click on the stone emplacement, either it should send an error"
+
+	^ self
+]

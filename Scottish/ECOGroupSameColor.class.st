@@ -7,7 +7,7 @@ I collaborate with ECOStone, ECOCard and ECOBoard.
 "
 Class {
 	#name : #ECOGroupSameColor,
-	#superclass : #ECOGroup,
+	#superclass : #ECOGroupComplete,
 	#category : #Scottish
 }
 
