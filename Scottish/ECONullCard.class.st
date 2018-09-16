@@ -36,6 +36,12 @@ ECONullCard >> isColorCorrect [
 ]
 
 { #category : #testing }
+ECONullCard >> isNull [
+
+	^ true
+]
+
+{ #category : #testing }
 ECONullCard >> isValueCorrect [
 
 	^ value = 0

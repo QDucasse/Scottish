@@ -83,6 +83,13 @@ ECOCard >> isColorCorrect [
 ]
 
 { #category : #testing }
+ECOCard >> isNull [
+	"Vérifie que la valeur de la carte est comprise entre 1 et 9"
+	
+	^ false
+]
+
+{ #category : #testing }
 ECOCard >> isValueCorrect [
 	"Vérifie que la valeur de la carte est comprise entre 1 et 9"
 	
