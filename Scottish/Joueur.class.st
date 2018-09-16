@@ -27,8 +27,7 @@ Joueur >> initialize [
 
 { #category : #accessing }
 Joueur >> main [
-	
-	^ self main
+	^ main
 ]
 
 { #category : #accessing }
@@ -39,8 +38,7 @@ Joueur >> main: anArray [
 
 { #category : #accessing }
 Joueur >> no [
-	
-	^ self no
+	^ no
 ]
 
 { #category : #accessing }
@@ -52,7 +50,7 @@ Joueur >> no: anInteger [
 { #category : #accessing }
 Joueur >> taille [
 	
-	^ self taille
+	^ taille
 ]
 
 { #category : #accessing }
