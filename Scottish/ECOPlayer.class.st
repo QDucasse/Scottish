@@ -14,26 +14,26 @@ Class {
 	#category : #Scottish
 }
 
+{ #category : #accessing }
+ECOPlayer >> hand [
+	^ main
+]
+
+{ #category : #accessing }
+ECOPlayer >> hand: anArray [
+	
+	no := anArray 
+]
+
 { #category : #initialization }
 ECOPlayer >> initialize [
 	
 	| c a |
 	c := ECOCard new.
-	self taille: 6.
+	self size: 6.
 	self no: 1.
-	a := Array new: self taille withAll: c.
-	self main: a
-]
-
-{ #category : #accessing }
-ECOPlayer >> main [
-	^ main
-]
-
-{ #category : #accessing }
-ECOPlayer >> main: anArray [
-	
-	no := anArray 
+	a := Array new: self size withAll: c.
+	self hand: a
 ]
 
 { #category : #accessing }
@@ -48,13 +48,13 @@ ECOPlayer >> no: anInteger [
 ]
 
 { #category : #accessing }
-ECOPlayer >> taille [
+ECOPlayer >> size [
 	
 	^ taille
 ]
 
 { #category : #accessing }
-ECOPlayer >> taille: anInteger [
+ECOPlayer >> size: anInteger [
 	
 	taille := anInteger 
 ]

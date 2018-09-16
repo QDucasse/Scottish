@@ -10,13 +10,33 @@ TestCard >> cardClass [
 ]
 
 { #category : #tests }
-TestCard >> testCouleurAccesseur [
+TestCard >> testColor [
 	"Vérifie que la valeur de la carte existe"
 
 	| c |
 	c := self cardClass new.
-	c couleur: 'R'.
-	self assert: c couleur equals: 'R'
+	c color: ECOCard A.
+	self assert: c color equals: ECOCard A
+]
+
+{ #category : #tests }
+TestCard >> testCorrectValueFalse [
+	"Vérifie que la valeur de la carte existe"
+
+	| c |
+	c := self cardClass new.
+	c value: 15.
+	self assert: c isValueCorrect not
+]
+
+{ #category : #tests }
+TestCard >> testCorrectValueTrue [
+	"Vérifie que la valeur de la carte existe"
+
+	| c |
+	c := self cardClass new.
+	c value: 4.
+	self assert: c isValueCorrect
 ]
 
 { #category : #tests }
@@ -31,38 +51,30 @@ TestCard >> testInitialize [
 
 	| c |
 	c := self cardClass new.
-	self assert: c couleur equals: self cardClass A.
-	self assert: c valeur equals:  1.
+	self assert: c color equals: self cardClass A.
+	self assert: c value equals:  1.
 	self assert: c isColorCorrect.
-	self assert: c valeurCorrecte
+	self assert: c isValueCorrect
 ]
 
 { #category : #tests }
-TestCard >> testValeurAccesseur [
+TestCard >> testIsNullCard [
+
+	|c|
+	c := ECONullCard new.
+	self assert: c value equals: 0.
+	self assert: c isValueCorrect.
+	self assert: c color equals: c class null.
+	self assert: c isColorCorrect.
+	
+]
+
+{ #category : #tests }
+TestCard >> testValue [
 	"Vérifie que la valeur de la carte existe"
 
 	| c |
 	c := self cardClass new.
-	c valeur: 8.
-	self assert: c valeur equals: 8
-]
-
-{ #category : #tests }
-TestCard >> testValeurEstCorrecteCasFaux [
-	"Vérifie que la valeur de la carte existe"
-
-	| c |
-	c := self cardClass new.
-	c valeur: 15.
-	self assert: c valeurCorrecte not
-]
-
-{ #category : #tests }
-TestCard >> testValeurEstCorrecteCasVrai [
-	"Vérifie que la valeur de la carte existe"
-
-	| c |
-	c := self cardClass new.
-	c valeur: 4.
-	self assert: c valeurCorrecte
+	c value: 8.
+	self assert: c value equals: 8
 ]

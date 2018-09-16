@@ -5,8 +5,8 @@ Class {
 	#name : #ECOCard,
 	#superclass : #Object,
 	#instVars : [
-		'couleur',
-		'valeur'
+		'color',
+		'value'
 	],
 	#category : #Scottish
 }
@@ -23,14 +23,38 @@ ECOCard class >> B [
 	^ 'B'
 ]
 
-{ #category : #accessing }
-ECOCard >> couleur [
-	^ couleur
+{ #category : #constant }
+ECOCard class >> C [
+
+	^ 'C'
+]
+
+{ #category : #constant }
+ECOCard class >> D [
+
+	^ 'D'
+]
+
+{ #category : #constant }
+ECOCard class >> E [
+
+	^ 'E'
+]
+
+{ #category : #constant }
+ECOCard class >> F [
+
+	^ 'F'
 ]
 
 { #category : #accessing }
-ECOCard >> couleur: aString [
-	couleur := aString
+ECOCard >> color [
+	^ color
+]
+
+{ #category : #accessing }
+ECOCard >> color: aString [
+	color := aString
 ]
 
 { #category : #initialization }
@@ -38,49 +62,48 @@ ECOCard >> defaultColor [
 	^ self class A
 ]
 
-{ #category : #printing }
-ECOCard >> displayString [
-	 ^ self couleur, self valeur printString
+{ #category : #initialization }
+ECOCard >> defaultValue [
+	^ 1
 ]
 
 { #category : #initialization }
 ECOCard >> initialize [
 	super initialize.
-	couleur := self defaultColor.
-	valeur := 1
+	color := self defaultColor.
+	value := self defaultValue 
 ]
 
 { #category : #testing }
 ECOCard >> isColorCorrect [
 	"Vérifie que la couleur de la carte est comprise entre A et F"
 
-	^ {ECOCard A . 'B' . 'C' . 'D' . 'E' .'F'} includes: couleur 
+	^ {ECOCard A . ECOCard B . ECOCard C . ECOCard D . ECOCard E .ECOCard F} includes: color 
 	
+]
+
+{ #category : #testing }
+ECOCard >> isValueCorrect [
+	"Vérifie que la valeur de la carte est comprise entre 1 et 9"
+	
+	^ value between: 1 and: 9 
 ]
 
 { #category : #printing }
 ECOCard >> printOn: aStream [
 
 	aStream 
-		nextPutAll: 'C:';
-		nextPutAll: self couleur;
-		print:  self valeur 
+		nextPutAll: self color;
+		print:  self value 
 		
 ]
 
 { #category : #accessing }
-ECOCard >> valeur [
-	^ valeur
+ECOCard >> value [
+	^ value
 ]
 
 { #category : #accessing }
-ECOCard >> valeur: anInteger [
-	valeur := anInteger
-]
-
-{ #category : #testing }
-ECOCard >> valeurCorrecte [
-	"Vérifie que la valeur de la carte est comprise entre 1 et 9"
-	
-	^ valeur between: 1 and: 9 
+ECOCard >> value: anInteger [
+	value := anInteger
 ]
