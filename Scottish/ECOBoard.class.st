@@ -11,7 +11,7 @@ Class {
 	#superclass : #Object,
 	#instVars : [
 		'stoneNumber',
-		'table'
+		'sides'
 	],
 	#category : #Scottish
 }
@@ -19,20 +19,24 @@ Class {
 { #category : #initialization }
 ECOBoard >> initialize [
 	
-	| c |
-	c := ECONullCard new.
 	super initialize.
 	stoneNumber := 9.
-	table := Matrix rows:7 columns: (self stoneNumber) element: c. 
+	sides := Dictionary new.
+	self initializeSide: #Player1.
+	self initializeSide: #Player2
+]
+
+{ #category : #initialization }
+ECOBoard >> initializeSide: aSymbol [
+	
+	sides at: aSymbol put: (Array new: stoneNumber withAll: ECOGroupEmpty new)
 	
 ]
 
-{ #category : #testing }
-ECOBoard >> isStoneEmpty: anInteger [
+{ #category : #accessing }
+ECOBoard >> sideForPlayer: aSymbol [
 
-	| c |
-	c := self table atColumn: anInteger.
-	^ c allSatisfy: [ :each | each isNull ]
+	^ sides at: aSymbol
 ]
 
 { #category : #accessing }
@@ -44,9 +48,4 @@ ECOBoard >> stoneNumber [
 ECOBoard >> stoneNumber: anInteger [
 	
 	stoneNumber := anInteger
-]
-
-{ #category : #accessing }
-ECOBoard >> table [
-	^ table
 ]

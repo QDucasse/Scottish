@@ -18,6 +18,19 @@ ECOGroupEmpty class >> empty [
 	^ self new
 ]
 
+{ #category : #initialization }
+ECOGroupEmpty >> initialize [
+
+	super initialize.
+	3 timesRepeat: [cards add: ECONullCard new]
+]
+
+{ #category : #testing }
+ECOGroupEmpty >> isEmpty [
+	
+	^ true
+]
+
 { #category : #accessing }
 ECOGroupEmpty >> strength [
 	^ 0

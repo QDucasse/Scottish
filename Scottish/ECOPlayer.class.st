@@ -1,6 +1,3 @@
-"
-Le joueur qui est finalement représenté par sa main consistant de 6 cartes. Il utilise les méthodes placer et piocher pour jouer des cartes. Son affichage consiste en la suite de cartes qui le composent.
-"
 Class {
 	#name : #ECOPlayer,
 	#superclass : #Object,

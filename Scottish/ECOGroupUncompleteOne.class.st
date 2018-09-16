@@ -20,10 +20,16 @@ ECOGroupUncompleteOne class >> uncompleteA1 [
 	c1 value: 1.
 	c1 color: 'A'.
 	g := ECOGroupEmpty new.	
-	g with: c1.
-	^ g	
+	^ g with: c1
 
 
+]
+
+{ #category : #testing }
+ECOGroupUncompleteOne >> initialize [
+
+	super initialize.
+	2 timesRepeat: [cards add: ECONullCard new]
 ]
 
 { #category : #testing }

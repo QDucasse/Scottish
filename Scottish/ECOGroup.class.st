@@ -40,6 +40,12 @@ ECOGroup >> initialize [
 ]
 
 { #category : #testing }
+ECOGroup >> isEmpty [
+
+	^ false
+]
+
+{ #category : #testing }
 ECOGroup >> isUncomplete [
 	^ false
 ]

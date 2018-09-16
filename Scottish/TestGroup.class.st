@@ -19,6 +19,14 @@ TestGroup >> testAddInEmptyMakesUncompleteWithRightCard [
 ]
 
 { #category : #tests }
+TestGroup >> testEmptyGroupInitialize [
+
+	| g |
+	g := ECOGroupEmpty new.
+	self assert: (g cards allSatisfy: [ :c | c isNull ])
+]
+
+{ #category : #tests }
 TestGroup >> testIsGroupComplete [
 	"no interesting relation etween the cards => strength 1"
 		
@@ -118,6 +126,26 @@ TestGroup >> testStrengthOfEmptyGroupIsZero [
 TestGroup >> testStrengthOfUncompleteGroupIsZero [
 	
 	self assert: ECOGroupUncompleteTwo uncompleteA1B2 strength equals: 0 
+]
+
+{ #category : #tests }
+TestGroup >> testUncompleteOneGroupInitialize [
+
+	| g cards |
+	g := ECOGroupUncompleteOne uncompleteA1.
+	cards := g cards sorted: [ :a :b | a value < b value ].
+	self assert: cards first isNull.
+	self assert: cards second isNull.
+	self assert: cards last isNull not
+	
+]
+
+{ #category : #tests }
+TestGroup >> testUncompleteTwoGroupInitialize [
+
+	| g |
+	g := ECOGroupEmpty new.
+	self assert: (g cards allSatisfy: [ :c | c isNull ])
 ]
 
 { #category : #tests }

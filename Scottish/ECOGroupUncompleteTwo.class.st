@@ -29,6 +29,13 @@ ECOGroupUncompleteTwo class >> uncompleteA1B2 [
 ]
 
 { #category : #accessing }
+ECOGroupUncompleteTwo >> initialize [
+
+	super initialize.
+	cards add: ECONullCard new
+]
+
+{ #category : #adding }
 ECOGroupUncompleteTwo >> isUncomplete [
 
 	^ true
@@ -40,7 +47,7 @@ ECOGroupUncompleteTwo >> strength [
 	
 ]
 
-{ #category : #accessing }
+{ #category : #adding }
 ECOGroupUncompleteTwo >> with: anECOCard [
 	
 	| s sameColor sameValue isSequence |
