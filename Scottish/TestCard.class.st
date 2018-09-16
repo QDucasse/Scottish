@@ -22,7 +22,7 @@ TestCard >> testCouleurAccesseur [
 { #category : #tests }
 TestCard >> testDisplayString [ 
 
-	self assert: self cardClass new displayString equals: 'A0'
+	self assert: self cardClass new displayString equals: 'A1'
 ]
 
 { #category : #tests }
@@ -32,9 +32,9 @@ TestCard >> testInitialize [
 	| c |
 	c := self cardClass new.
 	self assert: c couleur equals: self cardClass A.
-	self assert: c valeur equals:  0.
+	self assert: c valeur equals:  1.
 	self assert: c isColorCorrect.
-	self assert: c valeurCorrecte not
+	self assert: c valeurCorrecte
 ]
 
 { #category : #tests }
