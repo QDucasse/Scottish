@@ -20,6 +20,12 @@ TestCarte >> testCouleurAccesseur [
 ]
 
 { #category : #tests }
+TestCarte >> testDisplayString [ 
+
+	self assert: self cardClass new displayString equals: 'A0'
+]
+
+{ #category : #tests }
 TestCarte >> testInitialize [
 	"Vérifie que la valeur de la carte existe"
 

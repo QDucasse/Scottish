@@ -11,6 +11,18 @@ Class {
 	#category : #Scottish
 }
 
+{ #category : #constant }
+Carte class >> A [
+
+	^ 'A'
+]
+
+{ #category : #constant }
+Carte class >> B [
+
+	^ 'B'
+]
+
 { #category : #accessing }
 Carte >> couleur [
 	^ couleur
@@ -31,11 +43,16 @@ Carte >> couleurCorrecte [
 	^ b
 ]
 
+{ #category : #printing }
+Carte >> displayString [
+	 ^ self couleur, self valeur printString
+]
+
 { #category : #initialization }
 Carte >> initialize [
 
 	super initialize.
-	couleur := 'Indéfini'.
+	couleur := self class A.
 	valeur := 0.
 ]
 
