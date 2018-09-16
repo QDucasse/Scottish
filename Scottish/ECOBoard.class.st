@@ -1,3 +1,11 @@
+"
+I represent the board of the game. 
+
+I own a number of stones in which every player can put 3 cards.
+
+I collaborate with both ECOCard, ECOPlayer, ECOStone and ECOGame
+
+"
 Class {
 	#name : #ECOBoard,
 	#superclass : #Object,
@@ -27,12 +35,12 @@ ECOBoard >> isStoneEmpty: anInteger [
 	^ c allSatisfy: [ :each | each isNull ]
 ]
 
-{ #category : #acessing }
+{ #category : #accessing }
 ECOBoard >> stoneNumber [
 	^ stoneNumber
 ]
 
-{ #category : #acessing }
+{ #category : #accessing }
 ECOBoard >> stoneNumber: anInteger [
 	
 	stoneNumber := anInteger

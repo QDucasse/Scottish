@@ -1,11 +1,11 @@
 Class {
-	#name : #TestPlateau,
+	#name : #TestBoard,
 	#superclass : #TestCase,
 	#category : #Scottish
 }
 
 { #category : #tests }
-TestPlateau >> testInitialize [
+TestBoard >> testInitialize [
 
 	| b |
 	b := ECOBoard new.

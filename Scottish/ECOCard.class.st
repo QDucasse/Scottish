@@ -17,6 +17,12 @@ ECOCard class >> A [
 	^ 'A'
 ]
 
+{ #category : #example }
+ECOCard class >> A1 [
+
+	^self new
+]
+
 { #category : #constant }
 ECOCard class >> B [
 
@@ -45,6 +51,16 @@ ECOCard class >> E [
 ECOCard class >> F [
 
 	^ 'F'
+]
+
+{ #category : #example }
+ECOCard class >> F2 [
+
+	| c |
+	c := ECOCard new.
+	c value: 2.
+	c color: 'F'.
+	^ c
 ]
 
 { #category : #accessing }
