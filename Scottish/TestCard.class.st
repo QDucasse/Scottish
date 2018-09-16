@@ -1,16 +1,16 @@
 Class {
-	#name : #TestCarte,
+	#name : #TestCard,
 	#superclass : #TestCase,
 	#category : #Scottish
 }
 
 { #category : #tests }
-TestCarte >> cardClass [
-	^ Carte
+TestCard >> cardClass [
+	^ ECOCard
 ]
 
 { #category : #tests }
-TestCarte >> testCouleurAccesseur [
+TestCard >> testCouleurAccesseur [
 	"Vérifie que la valeur de la carte existe"
 
 	| c |
@@ -20,25 +20,25 @@ TestCarte >> testCouleurAccesseur [
 ]
 
 { #category : #tests }
-TestCarte >> testDisplayString [ 
+TestCard >> testDisplayString [ 
 
 	self assert: self cardClass new displayString equals: 'A0'
 ]
 
 { #category : #tests }
-TestCarte >> testInitialize [
+TestCard >> testInitialize [
 	"Vérifie que la valeur de la carte existe"
 
 	| c |
 	c := self cardClass new.
-	self assert: c couleur = 'Indéfini'.
-	self assert: c valeur = 0.
-	self assert: c couleurCorrecte not.
+	self assert: c couleur equals: self cardClass A.
+	self assert: c valeur equals:  0.
+	self assert: c isColorCorrect.
 	self assert: c valeurCorrecte not
 ]
 
 { #category : #tests }
-TestCarte >> testValeurAccesseur [
+TestCard >> testValeurAccesseur [
 	"Vérifie que la valeur de la carte existe"
 
 	| c |
@@ -48,7 +48,7 @@ TestCarte >> testValeurAccesseur [
 ]
 
 { #category : #tests }
-TestCarte >> testValeurEstCorrecteCasFaux [
+TestCard >> testValeurEstCorrecteCasFaux [
 	"Vérifie que la valeur de la carte existe"
 
 	| c |
@@ -58,7 +58,7 @@ TestCarte >> testValeurEstCorrecteCasFaux [
 ]
 
 { #category : #tests }
-TestCarte >> testValeurEstCorrecteCasVrai [
+TestCard >> testValeurEstCorrecteCasVrai [
 	"Vérifie que la valeur de la carte existe"
 
 	| c |

@@ -2,7 +2,7 @@
 Carte du jeu, représentée par leur couleur et leur valeur et s'affichant sous la forme 'Couleur Valeur'.
 "
 Class {
-	#name : #Carte,
+	#name : #ECOCard,
 	#superclass : #Object,
 	#instVars : [
 		'couleur',
@@ -12,71 +12,75 @@ Class {
 }
 
 { #category : #constant }
-Carte class >> A [
+ECOCard class >> A [
 
 	^ 'A'
 ]
 
 { #category : #constant }
-Carte class >> B [
+ECOCard class >> B [
 
 	^ 'B'
 ]
 
 { #category : #accessing }
-Carte >> couleur [
+ECOCard >> couleur [
 	^ couleur
 ]
 
 { #category : #accessing }
-Carte >> couleur: aString [
+ECOCard >> couleur: aString [
 	couleur := aString
 ]
 
-{ #category : #testing }
-Carte >> couleurCorrecte [
-	"Vérifie que la couleur de la carte est comprise entre A et F"
-	| couleurs b|
-	b := false.
-	couleurs := #('A','B','C','D','E','F').
-	couleurs do: [ :each | b & (self couleur = each) ].
-	^ b
+{ #category : #initialization }
+ECOCard >> defaultColor [
+	^ self class A
 ]
 
 { #category : #printing }
-Carte >> displayString [
+ECOCard >> displayString [
 	 ^ self couleur, self valeur printString
 ]
 
 { #category : #initialization }
-Carte >> initialize [
-
+ECOCard >> initialize [
 	super initialize.
-	couleur := self class A.
-	valeur := 0.
+	couleur := self defaultColor.
+	valeur := 1
+]
+
+{ #category : #testing }
+ECOCard >> isColorCorrect [
+	"Vérifie que la couleur de la carte est comprise entre A et F"
+
+	^ {ECOCard A . 'B' . 'C' . 'D' . 'E' .'F'} includes: couleur 
+	
 ]
 
 { #category : #printing }
-Carte >> printOn [
-	"Affichage de la carte"
-	^ self couleur, self valeur
+ECOCard >> printOn: aStream [
+
+	aStream 
+		nextPutAll: 'C:';
+		nextPutAll: self couleur;
+		print:  self valeur 
+		
 ]
 
 { #category : #accessing }
-Carte >> valeur [
+ECOCard >> valeur [
 	^ valeur
 ]
 
 { #category : #accessing }
-Carte >> valeur: anInteger [
+ECOCard >> valeur: anInteger [
 	valeur := anInteger
 ]
 
 { #category : #testing }
-Carte >> valeurCorrecte [
+ECOCard >> valeurCorrecte [
 	"Vérifie que la valeur de la carte est comprise entre 1 et 9"
-	| arg1 arg2|
-	arg1 := self valeur < 10.
-	arg2 := self valeur > 0.
-	^ (arg1 & arg2)
+	
+	^ valeur between: 1 and: 9 
 ]

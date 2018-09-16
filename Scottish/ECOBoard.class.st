@@ -1,5 +1,5 @@
 Class {
-	#name : #Plateau,
+	#name : #ECOBoard,
 	#superclass : #Object,
 	#instVars : [
 		'taille',

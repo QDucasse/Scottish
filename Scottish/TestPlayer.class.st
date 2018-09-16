@@ -1,5 +1,5 @@
 Class {
-	#name : #TestJoueur,
+	#name : #TestPlayer,
 	#superclass : #TestCase,
 	#category : #Scottish
 }

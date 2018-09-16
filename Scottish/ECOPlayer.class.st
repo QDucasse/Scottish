@@ -2,7 +2,7 @@
 Le joueur qui est finalement représenté par sa main consistant de 6 cartes. Il utilise les méthodes placer et piocher pour jouer des cartes. Son affichage consiste en la suite de cartes qui le composent.
 "
 Class {
-	#name : #Joueur,
+	#name : #ECOPlayer,
 	#superclass : #Object,
 	#type : #variable,
 	#instVars : [
@@ -15,10 +15,10 @@ Class {
 }
 
 { #category : #initialization }
-Joueur >> initialize [
+ECOPlayer >> initialize [
 	
 	| c a |
-	c := Carte new.
+	c := ECOCard new.
 	self taille: 6.
 	self no: 1.
 	a := Array new: self taille withAll: c.
@@ -26,35 +26,35 @@ Joueur >> initialize [
 ]
 
 { #category : #accessing }
-Joueur >> main [
+ECOPlayer >> main [
 	^ main
 ]
 
 { #category : #accessing }
-Joueur >> main: anArray [
+ECOPlayer >> main: anArray [
 	
 	no := anArray 
 ]
 
 { #category : #accessing }
-Joueur >> no [
+ECOPlayer >> no [
 	^ no
 ]
 
 { #category : #accessing }
-Joueur >> no: anInteger [
+ECOPlayer >> no: anInteger [
 	
 	no := anInteger
 ]
 
 { #category : #accessing }
-Joueur >> taille [
+ECOPlayer >> taille [
 	
 	^ taille
 ]
 
 { #category : #accessing }
-Joueur >> taille: anInteger [
+ECOPlayer >> taille: anInteger [
 	
 	taille := anInteger 
 ]
